@@ -1,0 +1,57 @@
+#!/bin/bash
+echo "************************** # Hi This is the script is to set for Template of C/C++ files #*************************************"
+echo
+x=`pwd`
+cd
+mkdir ~/.vim
+cd ~/.vim
+mkdir templates
+cd templates
+
+touch template.c
+echo "#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	
+	return 0;
+}
+">>template.c
+
+touch template.cpp
+echo "#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	
+	return 0;
+}">>template.cpp
+
+cd
+rm -rf ~/.vimrc
+touch ~/.vimrc
+echo "set shiftwidth=2
+set autoindent
+set smartindent
+set tabstop=2
+set showmatch
+set smarttab
+set expandtab
+set smartcase
+set nu
+inoremap ( ()<ESC>i
+inoremap \" \"\"<ESC>i
+inoremap ' ''<ESC>i
+inoremap { {}<Esc>i
+inoremap [ []<ESC>i
+inoremap {<CR> {<CR>}<Esc>i<CR><Esc>ki<Tab><Tab>
+autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++11   -O2   % -o %:r && ./%:r <CR>
+autocmd filetype c nnoremap <F5> :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++11   -O2   % -o %:r && ./%:r <CR>
+">> ~/.vimrc
+echo ":autocmd BufNewFile *.c 0r ~/.vim/templates/template.c">> ~/.vimrc
+echo ":autocmd BufNewFile *.cpp 0r ~/.vim/templates/template.cpp">> ~/.vimrc
+
+echo "Your Template has been set."
+cd $x
