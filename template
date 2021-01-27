@@ -47,8 +47,8 @@ inoremap ' ''<ESC>i
 inoremap { {}<Esc>i
 inoremap [ []<ESC>i
 inoremap {<CR> {<CR>}<Esc>i<CR><Esc>ki<Tab><Tab>
-autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++11   -O2   % -o %:r && ./%:r <CR>
-autocmd filetype c nnoremap <F5> :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++11   -O2   % -o %:r && ./%:r <CR>
+:autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++11   -O2   % -o %:r && ./%:r <CR>
+:autocmd filetype c nnoremap <F5> :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++11   -O2   % -o %:r && ./%:r <CR>
 ">> ~/.vimrc
 echo ":autocmd BufNewFile *.c 0r ~/.vim/templates/template.c">> ~/.vimrc
 echo ":autocmd BufNewFile *.cpp 0r ~/.vim/templates/template.cpp">> ~/.vimrc
