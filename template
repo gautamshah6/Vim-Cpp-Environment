@@ -30,7 +30,6 @@ int main()
 }">>template.cpp
 
 cd
-rm -rf ~/.vimrc
 touch ~/.vimrc
 echo "set shiftwidth=2
 set autoindent
